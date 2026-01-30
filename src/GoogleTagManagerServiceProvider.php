@@ -35,6 +35,7 @@ class GoogleTagManagerServiceProvider extends ServiceProvider
             $googleTagManager = new GoogleTagManager(
                 $app->make(ConfigRepository::class)->string('googletagmanager.id'),
                 $app->make(ConfigRepository::class)->string('googletagmanager.domain'),
+                $app->make(ConfigRepository::class)->string('googletagmanager.nonceEnabled'),
             );
 
             if ($app->make(ConfigRepository::class)->boolean('googletagmanager.enabled') === false) {

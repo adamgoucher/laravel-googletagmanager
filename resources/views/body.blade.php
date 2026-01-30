@@ -3,12 +3,13 @@
  * @var bool $enabled
  * @var string $id
  * @var string $domain
+ * @var bool $nonceEnabled
  * @var \Spatie\GoogleTagManager\DataLayer $dataLayer
  * @var iterable<\Spatie\GoogleTagManager\DataLayer> $pushData
  */
 ?>
 @if($enabled)
-    <script>
+    <script {{ $nonceEnabled ?? 'nonce="' . Vite::cspNone() . '"'}}>
         function gtmPush() {
             @foreach($pushData as $item)
             window.dataLayer.push({!! $item->toJson() !!});

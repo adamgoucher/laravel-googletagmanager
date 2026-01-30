@@ -23,4 +23,10 @@ return [
      * to serve gtm.js for your web container. Else, keep the default value.
      */
     'domain' => env('GOOGLE_TAG_MANAGER_DOMAIN', 'www.googletagmanager.com'),
+
+    /*
+     * Set false to disable adding the nonce to injected script tags when you cannot
+     * have unsafe-inline enabled in a CSP. 
+     */
+    'nonceEnabled' => env('GOOGLE_TAG_MANAGER_NONCE_ENABLED', false),
 ];
