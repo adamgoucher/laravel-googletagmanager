@@ -9,7 +9,7 @@
  */
 ?>
 @if($enabled)
-    <script {{ $nonceEnabled ?? 'nonce="' . Vite::cspNone() . '"'}}>
+    <script {{ $nonceEnabled ?? 'nonce="' . Vite::cspNonce() . '"'}}>
         function gtmPush() {
             @foreach($pushData as $item)
             window.dataLayer.push({!! $item->toJson() !!});
