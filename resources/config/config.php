@@ -26,7 +26,7 @@ return [
 
     /*
      * Set false to disable adding the nonce to injected script tags when you cannot
-     * have unsafe-inline enabled in a CSP. 
+     * have unsafe-inline enabled in a CSP.
      */
     'nonceEnabled' => env('GOOGLE_TAG_MANAGER_NONCE_ENABLED', false),
 ];
