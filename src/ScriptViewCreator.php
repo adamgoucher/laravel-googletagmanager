@@ -21,6 +21,7 @@ class ScriptViewCreator
             ->with('enabled', $this->googleTagManager->isEnabled())
             ->with('id', $this->googleTagManager->id())
             ->with('domain', $this->googleTagManager->gtmScriptDomain())
+            ->with('nonceEnabled', $this->googleTagManager->isNonceEnabled())
             ->with('dataLayer', $this->googleTagManager->getDataLayer())
             ->with('pushData', $this->googleTagManager->getPushData());
     }

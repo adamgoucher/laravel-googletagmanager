@@ -24,6 +24,7 @@ class GoogleTagManager
     public function __construct(
         protected string $id,
         protected string $gtmScriptDomain,
+        protected bool $nonceEnabled = false,
     ) {
         $this->dataLayer = new DataLayer;
         $this->flashDataLayer = new DataLayer;
@@ -55,6 +56,14 @@ class GoogleTagManager
     public function gtmScriptDomain(): string
     {
         return $this->gtmScriptDomain;
+    }
+
+    /**
+     * Check whether CSP nonce is enabled.
+     */
+    public function isNonceEnabled(): bool
+    {
+        return $this->nonceEnabled;
     }
 
     /**
